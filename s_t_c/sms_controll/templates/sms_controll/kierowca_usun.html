@@ -1,0 +1,21 @@
+{% extends "sms_controll/layout.html" %}
+
+
+{% block content %}
+
+<h2>{{ title }}</h2>
+
+    <h1>Kierowca</h1>
+    <hr></hr>
+    
+    <form method="POST" class="form-horizontal">
+    	{% csrf_token %}
+    	
+      	<p>Czy na pewno chcesz usunac kierowce:<br /><i>{{ object }}</i>?</p>
+    	<br>
+    	<input class="btn btn-primary btn-sm" role="button" type="submit" value="Usun" />
+      
+    </form>
+
+
+{% endblock content %}

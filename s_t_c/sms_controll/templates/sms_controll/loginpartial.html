@@ -1,0 +1,11 @@
+{% if user.is_authenticated %}
+<form id="logoutForm" action="/wyloguj" method="post" class="navbar-right">
+    {% csrf_token %}
+    <ul class="nav navbar-nav navbar-right">
+        <li><span class="navbar-brand">Witaj {{ user.username }}!</span></li>
+        <li><a href="/wyloguj">Log off</a></li>
+    </ul>
+
+</form>
+
+{% endif %}

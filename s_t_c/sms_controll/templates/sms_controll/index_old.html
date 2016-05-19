@@ -1,0 +1,37 @@
+{% extends "sms_controll/layout_admin.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>SMS Transport Controll</h1>
+    
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+
+    </div>
+    
+</div>
+
+	    {% if messages %}
+	       <ul>
+	       {% for komunikat in messages %}
+	          <li>{{ komunikat|capfirst }}</li>
+	       {% endfor %}
+	       </ul>
+	    {% endif %}
+	    
+	    {% if not user.is_authenticated %}
+	      <ul>
+	        <li><a href="{% url 'sms_controll:loguj'%}">Zaloguj siê</a></li>
+	      </ul>
+	    {% else %}
+	      <p>Jesteœ zalogowany jako {{ user.username }}</p>
+	      <ul>
+	      	<li><a href="{% url 'sms_controll:index' %}">Strona G³ówna</a></li>
+	        <li><a href="{% url 'sms_controll:wyloguj'%}">Wyloguj</a></li>
+	      </ul>
+	    {% endif %}
+
+{% endblock %}
