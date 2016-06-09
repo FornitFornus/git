@@ -19,12 +19,13 @@
             <tbody>
                    
                    {% for index, data, telefon, status in lista_sms %}
-                       <tr>
+						<tr>
                             <td>{{ index }}</td>
                             <td>{{ data }}</td> 
                             <td>{{ telefon }}</td>
                             <td>{{ status }}</td> 
                        </tr>
+                       
                    {% endfor %}
                    
             </tbody>

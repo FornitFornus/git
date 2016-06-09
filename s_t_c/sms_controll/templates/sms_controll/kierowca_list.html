@@ -11,7 +11,7 @@
     <ol>
       {% for kierowca in object_list %}
       <li>
-        <strong>{{ kierowca }}</strong> &bull; <a href = "{% url 'sms_controll:edytuj' kierowca.id %}">Edytuj</a> &bull; <a href = "{% url 'sms_controll:usun' kierowca.id %}">Usun</a>
+        <strong>{{ kierowca }}</strong> &bull; <a href = "{% url 'sms_controll:edytuj' kierowca.id %}">Edytuj</a> &bull; <a href = "{% url 'sms_controll:usun' kierowca.id %}">Usun</a> &bull; <a href = "{% url 'sms_controll:wyslij_sms' kierowca.id %}">Wyslij SMS</a>
         <br />
       </li>
       {% endfor %}

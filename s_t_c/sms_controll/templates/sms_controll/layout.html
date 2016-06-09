@@ -6,6 +6,7 @@
     <title>{{ title }} - My Django Application</title>
     {% load staticfiles %}
     <link rel="stylesheet" type="text/css" href="{% static 'sms_controll/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'sms_controll/css/bootstrap-submenu.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'sms_controll/css/site.css' %}" />
     <script src="{% static 'sms_control/scripts/modernizr-2.6.2.js' %}"></script>
 </head>
@@ -18,7 +19,7 @@
 				<h2>Witaj w aplikacji</h2>
 			    <h1>SMS Transport Controll</h1>
 			    <br>
-			    <p><a class="btn btn-primary btn-lg" href="/loguj" role="button"> Log in </a></p>
+			    <p><a class="btn btn-primary btn-lg" href="/loguj" role="button"> Zaloguj </a></p>
 			</div>
 		</div>
 		    
@@ -39,9 +40,9 @@
 	                	  <li class="dropdown">
 			              <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SMS <span class="caret"></span></a>
 			              <ul class="dropdown-menu">
-			                <li><a href="/home/sms_list"></span>Action</a></li>
-			                <li><a href="#">Another action</a></li>
-			                <li><a href="#">Something else here</a></li>
+			                <li><a href="/home/sms_list_zaladowany"></span>Zaladowany</a></li>
+			                <li><a href="/home/sms_list_rozladowany">Rozladowany</a></li>
+			                <li><a href="/home/sms_list_all">Wszystkie</a></li>
 			              </ul>
 			            </li>
 	                	
@@ -51,21 +52,22 @@
 			                <li><a href="kierowcy">Lista kierowcow</a></li>
 			                <li><a href="/home/kierowca">Dodaj</a></li>
 			                <li role="separator" class="divider"></li>
-			                <li class="dropdown-header">Nav header</li>
+			              
 			                <li><a href="#">Wyslij SMS</a></li>
 			              </ul>
 			            </li>
 			            	                    
 	                    <li class="dropdown">
-			              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Zamowienia <span class="caret"></span></a>
+			              <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Zlecenie <span class="caret"></span></a>
 			              <ul class="dropdown-menu">
-			                <li><a href="#">Action</a></li>
-			                <li><a href="#">Another action</a></li>
-			                <li><a href="#">Something else here</a></li>
-			                <li role="separator" class="divider"></li>
-			                <li class="dropdown-header">Nav header</li>
-			                <li><a href="#">Separated link</a></li>
-			                <li><a href="#">One more separated link</a></li>
+			                <li class="dropdown-submenu">
+			                <a>Nowe zlecenie dla: </a>
+			                	<ul class="dropdown-menu">
+			                		<li><a a href="/home/zlecenie">Mynarski AUTOMOTIVE POLAND</a></li>
+			                		<li><a>Mynarski-TRANS P.H.U.</a></li>
+			                	</ul>
+			                </li>
+			                <li><a href="/home/zlecenia">Wyswietl zlecenia</a></li>
 			              </ul>
 			            </li>
 	                </ul>

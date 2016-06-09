@@ -42,3 +42,14 @@ input[type="checkbox"].input-validation-error {
 .validation-summary-valid {
     display: none;
 }
+
+
+.row #firma zlecajaca {
+	border: thin solid #000000;
+}
+.row #mapa  {
+	border: thin solid #08ED22;
+}
+.row #firma przewozowa {
+	border: thin solid #2007F5;
+}

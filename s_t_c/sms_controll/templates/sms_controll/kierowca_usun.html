@@ -13,9 +13,8 @@
     	
       	<p>Czy na pewno chcesz usunac kierowce:<br /><i>{{ object }}</i>?</p>
     	<br>
-    	<input class="btn btn-primary btn-sm" role="button" type="submit" value="Usun" />
-      
-    </form>
+    	<input class="btn btn-danger btn-sm" role="button" type="submit" value="Usun" /> <a href="{% url 'sms_controll:home' %}"><button class="btn btn-primary btn-sm" role="button" type="reset" value="Reset">Anuluj</button></a>
+   </form>
 
 
 {% endblock content %}

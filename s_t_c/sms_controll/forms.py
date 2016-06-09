@@ -23,5 +23,8 @@ class KierowcaForm(ModelForm):
         Kierowca.save()
         messages.success(self.request, "Dodano nowego kierowce")
         return super(Kierowca, self).form_valid(form)
-            
-        
+    
+class SmsForm(forms.Form):
+    class Meta:
+        model = Kierowca
+        fields = ['Imie', 'Nazwisko', 'Nr_tel_kom'] #['pub_date', 'headline', 'content', 'reporter'],
