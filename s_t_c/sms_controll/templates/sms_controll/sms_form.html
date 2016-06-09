@@ -1,0 +1,27 @@
+{% extends "sms_controll/layout.html" %}
+
+
+{% block content %}
+
+<h2>{{ title }}</h2>
+
+    <h1>Nowy kierowca</h1>
+    <hr></hr>
+    
+    <form method="POST" class="form-horizontal">
+    	{% csrf_token %}
+    	<!--{{ form.as_table }}-->
+    	{% for field in form %}
+			<div class="fieldWrapper">
+				{{ field.errors }}
+				{{ field.label_tag }} <br>
+				{{ field.Imie }}
+			</div>
+		{% endfor %}
+    	<br>
+    	<input class="btn btn-primary btn-sm" role="button" type="submit" value="Zapisz" />
+      
+    </form>
+
+
+{% endblock content %}

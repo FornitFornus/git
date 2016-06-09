@@ -1,0 +1,37 @@
+{% extends "sms_controll/layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}</h2>
+<hr></hr>
+
+<div class="tablica_rekordow" style="text-align:left;font-family:Arial;">
+    <div class= = "table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>INDEX</th>
+                    <th>DATA</th>
+                    <th>Nr TELEFONU</th>
+                    <th>STATUS</th>
+               </tr>
+            </thead>
+            <tbody>
+                   
+                   {% for index, data, telefon, status in lista_sms %}
+						<tr>
+                            <td>{{ index }}</td>
+                            <td>{{ data }}</td> 
+                            <td>{{ telefon }}</td>
+                            <td>{{ status }}</td> 
+                       </tr>
+                       
+                   {% endfor %}
+                   
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+{% endblock content %}

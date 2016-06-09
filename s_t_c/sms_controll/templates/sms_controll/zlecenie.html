@@ -1,0 +1,96 @@
+{% extends "sms_controll/layout.html" %}
+ 
+{% block content %}	
+ 
+    <h2>Zlecenie przewozowe</h2>
+    <hr></hr>
+
+	<div class="container-fluid">
+		<div class="container">
+		      
+			 <div class="row">
+			    <div class="col-lg-4">
+			      
+			    </div>
+			    
+			    <div class="col-lg-4">
+			      <h4>Nr zlecenia:</h4>
+			    </div>
+			   
+			    <div class="col-lg-4">
+			      <h4>Data:</h4>
+			    </div>
+			    
+			 </div>
+		 </div>
+		 <hr></hr>
+	
+	  
+		<div class="row">
+		     <div id="firma zlecajaca" class="col-lg-3">
+		       <h4>Dane firmy zlecajacej:</h4>
+		     </div>
+		        
+			<div id="mapa" class="col-lg-6">
+			  <h5>Mapa lokalizacji:</h5>
+			  <iframe <img src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d41463975.539874345!2d19.385172599999958!3d50.63157090721287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spl!2spl!4v1423892701527"  width=100% style="border:0">
+			  </iframe>
+			  <h6>Skad-dokad</h6>	
+			  <div class="container-fluid">
+			    <div class="row">
+			      
+			      <div id = "zaladunek" class="col-lg-6">
+			        <h5>Data i godzina zaladunku:</h5>
+			      </div>
+			      
+			      <div id = "rozladunek" class="col-lg-6">
+			        <h5>Data i godzina rozladunku:</h5>
+			      </div>
+			      
+			      <div class="col-lg-6">
+			        <h5>Kierowca obslugujacy zlecenie:</h5>
+			      </div>
+			    </div>
+			    
+			    <div class="row">
+			    
+			      <div class="col-lg-6">
+			        <h5>Informacja z trasy:</h5>
+			      </div>
+			    
+			      <div class="col-lg-6">
+			      </div>
+			     </div>
+			  </div>
+			</div>
+		        
+		    <div id="firma przewozowa" class="col-lg-3">
+		       <h4>Dane firmy realizujacej przewoz:</h4>
+		    </div>
+		</div>
+	</div>
+
+<hr>
+<div class="container-fluid">
+  <h4>Pozostale Uwagi/Dane:</h4>
+</div>
+
+<hr>
+<div class="container-fluid">
+  <h6>Zlecenie przyjal:</h6>
+</div>
+
+    <form method="POST" class="form-horizontal">
+    	{% csrf_token %}
+    	<!--{{ form.as_table }}-->
+    	{% for field in form %}
+			<div class="fieldWrapper">
+				{{ form.as_p }}
+			</div>
+		{% endfor %}
+    	<br>
+    	<input class="btn btn-primary btn-sm" role="button" type="submit" value="Zapisz" />
+      
+    </form>
+
+{% endblock content %}
